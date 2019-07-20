@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { Component } from "react";
+//import user from "./user.png";
+import "./App.css";
 
-class Main extends React.Component {
+
+class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "Alex Bakery",
+      description: "Software Engineer, Speaker, and Occasional Model",
+      likes: "Cats, Wine, and Black dresses",
+      location: "localhost"
+    };
+  }
+
   render() {
+    const { name, description, likes, location } = this.state;
     return (
-      <div className="parent"> React Boiler Plate </div>
+      <div className="App">
+        <section className="User__img">
+          <img src={"https://image.ibb.co/jj1FGp/user.png"} alt="user" />
+        </section>
+
+        <section className="User__info">
+          <p>
+            {" "}
+            <span className="faint">I am</span> a {description}
+          </p>
+          <p>
+            {" "}
+            <span className="faint">I like</span> {likes}
+          </p>
+
+          <p className="User__info__details User__info__divider faint">
+            <span>Name: </span>
+            <span>{name}</span>
+          </p>
+          <p className="User__info__details faint">
+            <span>Location: </span>
+            <span>{location}</span>
+          </p>
+        </section>
+      </div>
     );
   }
 }
